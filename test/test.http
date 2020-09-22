@@ -1,4 +1,4 @@
-GET http://localhost:8888/repos/atom/atom/license
+GET http://localhost:7777/mocks/repos/atom/atom/license
 
 ###
-PUT http://localhost:8888/repos/atom/atom
+GET http://localhost:7777/server/close

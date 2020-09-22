@@ -10,14 +10,19 @@ const app = express();
 
 let server : Server;
 
-app.use("/server/close", () => {
-  server.close();
+app.get("/server/close", (req, res) => {
+  console.log("Closing server em 1s")
+  setTimeout(() => {  
+    server.close(function() { console.log('Closed :('); });
+  }, 1000);
+  
+  res.send( "Hello world!" );
 })
 
 app.use("/", proxy('mockserver:8888'));
 
 export async function startServer(rootFolder: string = "./test/mocks", port: number = 7777) {
-  const scope = nock(`http://mockserver:8888`)
+  const scope = nock(`http://mockserver:8888/mocks`)
 
   const repo = new MockRepository(rootFolder || "./test/mocks")
   const register = new RegisterMocks(repo, scope);
@@ -29,9 +34,11 @@ export async function startServer(rootFolder: string = "./test/mocks", port: num
 }
 
 export async function stopServer(port: number) {
-  http.get(`http://localhost:${port}/server/close`)
+  http.get(`http://localhost:${port}/server/close`, () => {
+    
+  process.exit(1)
+  })
 }
-
 
 if(process.env.NODE_ENV){
   startServer();

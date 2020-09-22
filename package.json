@@ -1,6 +1,6 @@
 {
   "name": "mock-rock",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Mock server using nock",
   "main": "build/server.js",
   "bin": {
