@@ -36,7 +36,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-http-proxy": "^1.6.2",
-    "nock": "^13.0.4",
-    "recursive-readdir": "^2.2.2"
+    "nock": "^13.0.4"
   }
 }
