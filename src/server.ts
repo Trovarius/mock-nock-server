@@ -4,22 +4,35 @@ import nock from "nock";
 
 import MockRepository from "./gateways/mock-repository"
 import RegisterMocks from "./use-cases/register-mocks"
+import http, {Server} from "http"
   
 const app = express();
-const port = 8888;
 
-const scope = nock(`http://mockserver:8888`)
+let server : Server;
 
-const repo = new MockRepository("./test/mocks")
-const register = new RegisterMocks(repo, scope);
+app.use("/server/close", () => {
+  server.close();
+})
 
 app.use("/", proxy('mockserver:8888'));
 
-async function start() {
+export async function startServer(rootFolder: string = "./test/mocks", port: number = 7777) {
+  const scope = nock(`http://mockserver:8888`)
+
+  const repo = new MockRepository(rootFolder || "./test/mocks")
+  const register = new RegisterMocks(repo, scope);
+
   await register.register();
-  app.listen(port, () => {
+  server = app.listen(port, () => {
     console.log(`\n server running at http://localhost:${port}`);
   });
 }
 
-start();
+export async function stopServer(port: number) {
+  http.get(`http://localhost:${port}/server/close`)
+}
+
+
+if(process.env.NODE_ENV){
+  startServer();
+}
