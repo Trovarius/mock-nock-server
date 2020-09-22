@@ -1,0 +1,4 @@
+GET http://localhost:8888/repos/atom/atom/license
+
+###
+PUT http://localhost:8888/repos/atom/atom
