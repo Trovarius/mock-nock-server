@@ -1,0 +1,38 @@
+{
+  "name": "mock-nock-server",
+  "version": "1.0.0",
+  "description": "Mock server using nock",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trovarius/mock-nock-server.git"
+  },
+  "keywords": [
+    "mock",
+    "mockserver",
+    "nock",
+    "server"
+  ],
+  "author": "Luiz Fernando Pereira (Trovarius)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Trovarius/mock-nock-server/issues"
+  },
+  "homepage": "https://github.com/Trovarius/mock-nock-server#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "@types/nock": "^11.1.0",
+    "@types/node": "^14.11.2",
+    "jest": "^26.4.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.2",
+    "nock": "^13.0.4"
+  }
+}
