@@ -37,6 +37,6 @@ export default class MockRepository implements IMockRepository {
   }
 
   getJSMocks(): string[] {
-    return this.fromDir(this.rootPath, ".nock.js");
+    return this.fromDir(this.rootPath, ".mock.js");
   }
 }

@@ -1,10 +1,10 @@
 {
-  "name": "mock-nock-server",
+  "name": "mock-rock",
   "version": "0.0.2",
   "description": "Mock server using nock",
   "main": "build/server.js",
   "bin": {
-    "nock-start": "build/bin/index.js"
+    "mock-rock": "build/bin/index.js"
   },
   "scripts": {
     "dev": "ts-node ./src/server",
