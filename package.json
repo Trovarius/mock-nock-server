@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@types/yargs": "^15.0.5",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-http-proxy": "^1.6.2",
     "nock": "^13.0.4",

@@ -1,4 +1,16 @@
-GET http://localhost:7777/mocks/repos/atom/atom/license
+GET http://localhost:7777/repos/atom/atom/license
+
+###
+PUT  http://localhost:7777/repos/atom/atom
+
+###
+GET  http://localhost:7777/users/123ABC
+
+###
+GET http://localhost:7777/mocks/goodey
 
 ###
 GET http://localhost:7777/server/close
+
+###
+GET http://localhost:7777/healthcheck
