@@ -1,13 +1,13 @@
 {
   "name": "mock-rock",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Mock server using nock",
   "main": "build/server.js",
   "bin": {
     "mock-rock": "build/bin/index.js"
   },
   "scripts": {
-    "dev": "ts-node ./src/server",
+    "dev": "set NODE_ENV=dev && ts-node ./src/server",
     "build": "rimraf ./build && tsc"
   },
   "repository": {

@@ -22,7 +22,7 @@ app.get("/server/close", (req, res) => {
 app.use("/", proxy('mockserver:8888'));
 
 export async function startServer(rootFolder: string = "./test/mocks", port: number = 7777) {
-  const scope = nock(`http://mockserver:8888/mocks`)
+  const scope = nock(`http://mockserver:8888`)
 
   const repo = new MockRepository(rootFolder || "./test/mocks")
   const register = new RegisterMocks(repo, scope);
